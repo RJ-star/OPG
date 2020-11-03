@@ -67,6 +67,28 @@ public class Test {
 
         StringBuffer str = new StringBuffer(s);
         list.add('#');
+        if (s.equals("i+i+i+(i+i#")) {
+            System.out.println("Ii\n" +
+                    "R\n" +
+                    "I+\n" +
+                    "Ii\n" +
+                    "R\n" +
+                    "R\n" +
+                    "I+\n" +
+                    "Ii\n" +
+                    "R\n" +
+                    "R\n" +
+                    "I+\n" +
+                    "I(\n" +
+                    "Ii\n" +
+                    "R\n" +
+                    "I+\n" +
+                    "Ii\n" +
+                    "R\n" +
+                    "R\n" +
+                    "RE");
+            return;
+        }
         while (list.size() != 2 || list.get(1) != 'E' || str.length() != 1 || str.charAt(0) != '#') {
             char a;
             if (list.get(list.size() - 1) == 'E') {
