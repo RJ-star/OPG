@@ -1,10 +1,11 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Test {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int[][] sign = new int[6][6];//1大于，0等于，-1小于，-2不存在
         ArrayList<Character> list = new ArrayList<>();//运算对象
 //        ArrayList<Character> list2 = new ArrayList<>();//运算符号
@@ -51,8 +52,19 @@ public class Test {
         sign[5][4]=-2;
         sign[5][5]=-2;
 
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.next() + "#";
+        FileInputStream inputStream = new FileInputStream(args[0]);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        String s=bufferedReader.readLine()+"#";
+
+        //close
+        inputStream.close();
+        bufferedReader.close();
+
+
+//
+//        Scanner scanner = new Scanner(System.in);
+//        String s = scanner.next() + "#";
         StringBuffer str = new StringBuffer(s);
         list.add('#');
         while (list.size() != 2 || list.get(1) != 'E' || str.length() != 1 || str.charAt(0) != '#') {
