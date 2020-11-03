@@ -52,18 +52,19 @@ public class Test {
         sign[5][4]=-2;
         sign[5][5]=-2;
 
-//        FileInputStream inputStream = new FileInputStream(args[0]);
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//
-//        String s=bufferedReader.readLine()+"#";
-//
-//        //close
-//        inputStream.close();
-//        bufferedReader.close();
+        FileInputStream inputStream = new FileInputStream(args[0]);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        String s=bufferedReader.readLine()+"#";
+
+        //close
+        inputStream.close();
+        bufferedReader.close();
 
 
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.next() + "#";
+//        Scanner scanner = new Scanner(System.in);
+//        String s = scanner.next() + "#";
+
         StringBuffer str = new StringBuffer(s);
         list.add('#');
         while (list.size() != 2 || list.get(1) != 'E' || str.length() != 1 || str.charAt(0) != '#') {
